@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Test</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-light text-dark font-sans">
+    <nav class="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <a href="index.php" class="navbar-brand">
+                            <i class="fas fa-truck text-primary text-2xl mr-2"></i>
+                            <span class="text-xl font-bold text-dark">LogiTrack</span>
+                        </a>
+                    </div>
+                    <div class="hidden md:ml-6 md:flex md:space-x-8">
+                        <a href="index.php#home" class="border-primary text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                            Home
+                        </a>
+                        <a href="index.php#track" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                            Track Order
+                        </a>
+                        <a href="index.php#services" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                            Services
+                        </a>
+                        <a href="index.php#contact" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                            Contact
+                        </a>
+                    </div>
+                </div>
+                <div class="flex items-center">
+                    <div class="hidden md:ml-4 md:flex md:items-center">
+                        <button id="loginBtn" class="text-gray-500 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">
+                            Login
+                        </button>
+                        <button id="registerBtn" class="bg-primary hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium ml-3">
+                            Register
+                        </button>
+                        <button id="adminBtn" class="bg-accent hover:bg-purple-700 text-white px-4 py-2 rounded-md text-sm font-medium ml-3">
+                            Admin
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-3xl font-bold mb-8">Navigation Test Page</h1>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-white p-6 rounded-lg shadow">
+                <h2 class="text-xl font-bold mb-4">Test Buttons</h2>
+                <div class="space-y-4">
+                    <button onclick="showTrackOrder()" class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                        Track Your Order
+                    </button>
+                    <button onclick="showRegisterOrder()" class="w-full bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+                        Register New Order
+                    </button>
+                    <button id="testLoginBtn" class="w-full bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded">
+                        Test Login Modal
+                    </button>
+                </div>
+            </div>
+            
+            <div class="bg-white p-6 rounded-lg shadow">
+                <h2 class="text-xl font-bold mb-4">Test Sections</h2>
+                <div class="space-y-4">
+                    <a href="#home" class="block w-full bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded text-center">
+                        Go to Home Section
+                    </a>
+                    <a href="#track" class="block w-full bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded text-center">
+                        Go to Track Section
+                    </a>
+                    <a href="#services" class="block w-full bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded text-center">
+                        Go to Services Section
+                    </a>
+                    <a href="#contact" class="block w-full bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded text-center">
+                        Go to Contact Section
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="mt-8 bg-yellow-50 border border-yellow-200 rounded-lg p-4">
+            <h3 class="font-bold text-yellow-800 mb-2">Debug Info</h3>
+            <div id="debugInfo" class="text-sm text-yellow-700">
+                Loading...
+            </div>
+        </div>
+    </div>
+
+    <!-- Test sections -->
+    <section id="home" class="py-16 bg-blue-100">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-4">Home Section</h2>
+            <p>This is the home section for testing navigation.</p>
+        </div>
+    </section>
+
+    <section id="track" class="py-16 bg-green-100">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-4">Track Section</h2>
+            <p>This is the track section for testing navigation.</p>
+        </div>
+    </section>
+
+    <section id="services" class="py-16 bg-purple-100">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-4">Services Section</h2>
+            <p>This is the services section for testing navigation.</p>
+        </div>
+    </section>
+
+    <section id="contact" class="py-16 bg-red-100">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-4">Contact Section</h2>
+            <p>This is the contact section for testing navigation.</p>
+        </div>
+    </section>
+
+    <!-- Include the main JavaScript -->
+    <script src="assets/js/main.js"></script>
+    
+    <script>
+        // Debug script
+        document.addEventListener('DOMContentLoaded', function() {
+            const debugInfo = document.getElementById('debugInfo');
+            
+            // Test if functions are available
+            const functions = ['showTrackOrder', 'showRegisterOrder', 'showLoginModal', 'showRegisterModal', 'showAdminLogin'];
+            const availableFunctions = functions.filter(func => typeof window[func] === 'function');
+            
+            debugInfo.innerHTML = `
+                <strong>JavaScript Functions:</strong><br>
+                Available: ${availableFunctions.join(', ')}<br>
+                Missing: ${functions.filter(func => !availableFunctions.includes(func)).join(', ')}<br>
+                <br>
+                <strong>Navigation Links:</strong><br>
+                Found ${document.querySelectorAll('a[href^="#"]').length} anchor links<br>
+                <br>
+                <strong>Buttons:</strong><br>
+                Found ${document.querySelectorAll('button').length} buttons<br>
+                <br>
+                <strong>Test:</strong> Click the buttons above to test functionality.
+            `;
+            
+            // Add event listeners for test buttons
+            document.getElementById('testLoginBtn').addEventListener('click', function() {
+                if (typeof showLoginModal === 'function') {
+                    showLoginModal();
+                } else {
+                    alert('showLoginModal function not available');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
